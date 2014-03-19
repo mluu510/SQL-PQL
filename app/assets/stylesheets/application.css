@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+
+textarea .sql--input {
+	width: 500px;
+	height: 300px;
+
+}
