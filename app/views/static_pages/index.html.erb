@@ -1,12 +1,24 @@
-<h1>SQL PQL</h1>
-
 <div class="row">
-	<div class="input-window">
-		<form>
-			<textarea class="sql-input" placeholder="SQL command goes here..."></textarea>
-			<input type="submit">
-		</form>
+	<h1 class="page-header">1. The SELECT command</h1>
 	</div>
-	<div class="output-window">
-	</div>
-</div>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#">Home</a></li>
+  <li><a href="#">Profile</a></li>
+  <li><a href="#">Messages</a></li>
+</ul>
+<%= render 'sql_window',
+	section_content: 'This query shows all information for the the table "world". The * means display every column.',
+	query_statement: 'SELECT
+*
+FROM
+bbc' %>
+
+<hr>
+
+<%= render 'sql_window',
+	section_content: 'To display just the country name and population, replace the * with "name, population"',
+	query_statement: 'ELECT
+name, population
+FROM
+bbc' %>
