@@ -1,14 +1,10 @@
 <div class="row">
 	<h1 class="page-header">1. The SELECT command</h1>
-	</div>
+</div>
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#">Home</a></li>
-  <li><a href="#">Profile</a></li>
-  <li><a href="#">Messages</a></li>
-</ul>
+
 <%= render 'sql_window',
-	section_content: 'This query shows all information for the the table "world". The * means display every column.',
+	section_content: 'This query shows all information for the the table "world". The * (asterik) means display every column.',
 	query_statement: 'SELECT
 *
 FROM
@@ -16,9 +12,26 @@ bbc' %>
 
 <hr>
 
-<%= render 'sql_window',
-	section_content: 'To display just the country name and population, replace the * with "name, population"',
-	query_statement: 'ELECT
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#ex1" data-toggle="tab">Example</a></li>
+	<li><a href="#q1" data-toggle="tab">Question</a></li>
+</ul>
+<!-- Tab panes -->
+<div class="tab-content top-buffer">
+	<div class="tab-pane active" id="ex1">
+		<%= render 'sql_window',
+		section_content: 'Ex. To display just the country name and population, replace the * with "name, population"',
+		query_statement: 'SELECT
 name, population
 FROM
 bbc' %>
+	</div>
+	<div class="tab-pane" id="q1">
+
+		<%= render 'sql_window',
+		section_content: 'Q. Display the name and area from table "world."',
+		query_statement: nil%>
+	</div>
+</div>
+

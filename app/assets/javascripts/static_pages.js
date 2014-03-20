@@ -33,6 +33,8 @@ var render = function(results, $targetEl) {
 }
 
 $(document).ready(function() {
+
+
 	$('form').on('submit', function(e) {
 		e.preventDefault();
 		var parentDiv = $(e.target).parent();
