@@ -57,13 +57,17 @@ var queryDB = function(outputWindow, textarea) {
 var render = function(results, $targetEl) {
 	$targetEl.empty();
 
-	// if (results.status) {
-	// 	var $alertView = $('div')
-	// 	$alertView.addClass('alert alert-success');
-	// 	$alertView.text(results.status);
-	// 	console.log(results.status);
-	// 	// $targetEl.append($alertView);
-	// }
+	if (results.status) {
+		var $alertView = $('<div>')
+		if (results.status === 'Correct!') {
+			$alertView.addClass('alert alert-success alert-dismissable strong');
+		} else {
+			$alertView.addClass('alert alert-danger alert-dismissable');
+		}
+		$alertView.text(results.status);
+		console.log(results.status);
+		$targetEl.append($alertView);
+	}
 
 	// Create results header
 	var $header = $('<h3>');
