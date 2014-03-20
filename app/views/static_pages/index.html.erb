@@ -4,6 +4,7 @@
 
 
 <%= render 'sql_window',
+	answer: nil,
 	section_content: 'This query shows all information for the the table "world". The * (asterik) means display every column.',
 	query_statement: 'SELECT
 *
@@ -19,6 +20,7 @@ bbc' %>
 <div class="tab-content top-buffer">
 	<div class="tab-pane active" id="ex1">
 		<%= render 'sql_window',
+		answer: nil,
 		section_content: 'To display just the country name and population, replace the * with "name, population"',
 		query_statement: 'SELECT
 name, population
@@ -28,6 +30,7 @@ bbc' %>
 	<div class="tab-pane" id="q1">
 
 		<%= render 'sql_window',
+		answer: 'answer1',
 		section_content: 'Display the name and area from table "world."',
 		query_statement: nil%>
 	</div>
@@ -42,6 +45,7 @@ bbc' %>
 <div class="tab-content top-buffer">
 	<div class="tab-pane active" id="ex2">
 		<%= render 'sql_window',
+		answer: nil,
 		section_content: 'The query shows the population density population/area for each country where the area is over 5,000,000 km2.',
 		query_statement: 'SELECT
 name, population/area
@@ -52,6 +56,7 @@ WHERE area > 5000000' %>
 	<div class="tab-pane" id="q2">
 
 		<%= render 'sql_window',
+		answer: 'answer2',
 		section_content: 'Show the per capita gdp: gdp/population for each country where the area is over 5,000,000 km2',
 		query_statement: nil%>
 	</div>
