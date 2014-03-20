@@ -1,0 +1,27 @@
+
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs top-buffer">
+	<% sql_views.each do |view| %>
+		<li <%= 'class=active' if sql_views.first == view %>>
+			<a href="#<%= view.id %>" data-toggle="tab">
+				<strong>
+					<%= view.title %>
+				</strong>
+			</a>
+		</li>
+	<% end %>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content top-buffer">
+	<% sql_views.each do |view| %>
+		<div class="tab-pane <%= 'active' if sql_views.first == view %>" id="<%= view.id %>">
+			<%= render 'sql_window',
+				content: view.content,
+				query: view.query,
+				answer: view.answer
+			%>
+		</div>
+	<% end %>
+</div>

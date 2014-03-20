@@ -2,6 +2,10 @@
 	<h1 class="page-header">1. The SELECT command</h1>
 </div>
 
+<% @sql_views.each do |view| %>
+	<%= render 'tab_view', view: view %>
+<% end %>
+
 
 <%= render 'sql_window',
 	answer: nil,
@@ -10,6 +14,9 @@
 *
 FROM
 world' %>
+
+<% render 'tab_view',
+
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">

@@ -1,0 +1,8 @@
+<div class="row">
+	<h1 class="page-header"><%= @section_title %></h1>
+</div>
+
+
+<% @ex_qs.each do |sql_views| %>
+	<%= render 'tab_view', sql_views: sql_views %>
+<% end %>

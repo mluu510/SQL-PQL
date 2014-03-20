@@ -4,7 +4,7 @@
 
 .sql-input {
 	width: 100%;
-	height: 200px;
+	height: 180px;
 	resize: none;
 	padding: 10px;
 
@@ -21,4 +21,9 @@
 
 .top-buffer {
 	margin-top:10px;
+}
+
+.output-text {
+	color: #CCC;
+	text-align: center;
 }
