@@ -33,19 +33,21 @@ var render = function(results, $targetEl) {
 }
 
 $(document).ready(function() {
-
-
 	$('form').on('submit', function(e) {
 		e.preventDefault();
 		var parentDiv = $(e.target).parent();
 		var outputWindow = $(parentDiv).siblings('.output-window');
-
-
-		console.log(outputWindow);
 		var query = $(e.target).find('textarea').val();
 		$.get('/run', { query: query }, function(results) {
 			render(results, outputWindow);
 		});
 
+	});
+
+	$('textarea').keydown(function (e) {
+		if (e.ctrlKey && e.keyCode == 13) {
+			e.preventDefault();
+			alert('hello');
+		}
 	});
 });
