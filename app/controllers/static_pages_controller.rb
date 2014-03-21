@@ -36,8 +36,8 @@ class StaticPagesController < ApplicationController
     q2_view = SQLView.new
     q2_view.id = 'q2'
     q2_view.title = 'Question 2'
-    q2_view.content = 'Show the per capita gdp (gdp/population) for each country where the area is over 5,000,000 km2'
-    q2_view.answer = "SELECT\nname, gdp/population\nFROM\nworld\nWHERE\narea > 5000000"
+    q2_view.content = 'Show the per capita gdp (gdp/population) for each country where the area is less than 5,000,000 km2'
+    q2_view.answer = "SELECT\nname, gdp/population\nFROM\nworld\nWHERE\narea < 5000000"
 
     ex_q2 = [ex2_view, q2_view]
 
@@ -104,13 +104,13 @@ class StaticPagesController < ApplicationController
     q6a_view.title = 'Question 6A'
     q6a_view.content = "Lets find all the small countries where the area is between 10,000 km2 and 50,000 km2. List the name and area."
     q6a_view.answer = "SELECT\nname, population\nFROM\nworld\nWHERE\narea BETWEEN 10000 AND 50000"
-    
+
     q6b_view = SQLView.new
     q6b_view.id = 'q6b'
     q6b_view.title = 'Question 6B'
     q6b_view.content = "List the country names and population where the population is between 35 million and 75 million. Display the population in millions please."
     q6b_view.answer = "SELECT\nname, population/1000000\nFROM\nworld\nWHERE\npopulation BETWEEN 35000000 AND 75000000"
-   
+
     ex_q6 = [ex6_view, q6a_view, q6b_view]
 
 

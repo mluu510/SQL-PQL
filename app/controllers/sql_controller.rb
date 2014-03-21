@@ -4,7 +4,7 @@ class SqlController < ApplicationController
 		query = params['query']
 		answer = params['answer']
 
-		blacklist = %w(DROP INSERT UPDATE SET)
+		blacklist = %w(DROP INSERT UPDATE CREATE ALTER DELETE)
 
 		blacklist.each do |word|
 			if query.upcase.include?(word) || answer.upcase.include?(word)

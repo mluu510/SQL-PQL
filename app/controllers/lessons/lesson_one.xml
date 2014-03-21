@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section>
+	<item>
+		<id>ex1</id>
+		<title>Example 1</title>
+		<content>To display just the country name and population, replace the * with "name, population"</content>
+		<query>SELECT\nname, population\nFROM\nworld</query>
+  </item>
+	<item>
+		<id>q1</id>
+		<title>Question 1</title>
+		<content>Display the name and area from table "world."</content>
+		<answer>SELECT\nname, area\nFROM\nworld</answer>
+  </item>
+</section>
+
+<section>
+	<item>
+		<id>ex2</id>
+		<title>Example 2</title>
+		<content>
+		<query>
+  </item>
+	<item>
+		<id>q2</id>
+		<title>Question 2</title>
+		<content>
+		<answer>
+  </item>
+</section>
+
+<section>
+	<item>
+		<id>ex3</id>
+		<title>Example 3</title>
+		<content>
+		<query>
+  </item>
+	<item>
+		<id>q3</id>
+		<title>Question 3</title>
+		<content>
+		<answer>
+  </item>
+</section>
+
+<section>
+	<item>
+		<id>ex4</id>
+		<title>Example 4</title>
+		<content>
+		<query>
+  </item>
+	<item>
+		<id>q4</id>
+		<title>Question 4</title>
+		<content>
+		<answer>
+  </item>
+</section>
+
+<section>
+	<item>
+		<id>ex5</id>
+		<title>Example 5</title>
+		<content>
+		<query>
+  </item>
+	<item>
+		<id>q5</id>
+		<title>Question 5</title>
+		<content>
+		<answer>
+  </item>
+</section>
+
+<section>
+	<item>
+		<id>ex6</id>
+		<title>Example 6</title>
+		<content>
+		<query>
+  </item>
+	<item>
+		<id>q6</id>
+		<title>Question 6</title>
+		<content>
+		<answer>
+  </item>
+</section>
