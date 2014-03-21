@@ -1,90 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section>
-	<item>
-		<id>ex1</id>
-		<title>Example 1</title>
-		<content>To display just the country name and population, replace the * with "name, population"</content>
-		<query>SELECT\nname, population\nFROM\nworld</query>
-  </item>
-	<item>
-		<id>q1</id>
-		<title>Question 1</title>
-		<content>Display the name and area from table "world."</content>
-		<answer>SELECT\nname, area\nFROM\nworld</answer>
-  </item>
-</section>
+<sections>
+	<section>
+		<item>
+			<id>ex1</id>
+			<title>Example 1</title>
+			<content>To display just the country name and population, replace the * with "name, population"</content>
+			<query>SELECT\nname, population\nFROM\nworld</query>
+		</item>
+		<item>
+			<id>q1</id>
+			<title>Question 1</title>
+			<content>Display the name and area from table "world."</content>
+			<answer>SELECT\nname, area\nFROM\nworld</answer>
+		</item>
+	</section>
 
-<section>
-	<item>
-		<id>ex2</id>
-		<title>Example 2</title>
-		<content>
-		<query>
-  </item>
-	<item>
-		<id>q2</id>
-		<title>Question 2</title>
-		<content>
-		<answer>
-  </item>
-</section>
+	<section>
+		<item>
+			<id>ex2</id>
+			<title>Example 2</title>
+			<content>The query shows the population density (population/area) for each country where the area is over 5,000,000 km2.</content>
+			<query>SELECT\nname, population/area\nFROM\nworld\nWHERE\narea &gt; 5000000</query>
+		</item>
+		<item>
+			<id>q2</id>
+			<title>Question 2</title>
+			<content>Show the per capita gdp (gdp/population) for each country where the area is less than 5,000,000 km2</content>
+			<answer>SELECT\nname, gdp/population\nFROM\nworld\nWHERE\narea &lt; 5000000</answer>
+		</item>
+	</section>
 
-<section>
-	<item>
-		<id>ex3</id>
-		<title>Example 3</title>
-		<content>
-		<query>
-  </item>
-	<item>
-		<id>q3</id>
-		<title>Question 3</title>
-		<content>
-		<answer>
-  </item>
-</section>
+	<section>
+		<item>
+			<id>ex3</id>
+			<title>Example 3</title>
+			<content>We use AND to ensure that two or more conditions hold true. The example shows the countries where the population is small and the gdp is high.</content>
+			<query>SELECT\nname , region\nFROM world\nWHERE\npopulation &lt; 2000000 AND gdp &gt; 5000000000</query>
+		</item>
+		<item>
+			<id>q3</id>
+			<title>Question 3</title>
+			<content>Lets find the richest small countries. Show the name and region where the area is less then 2,000 km2 and the gdp is more than $5,000,000,000</content>
+			<answer>SELECT\nname, region\nFROM\nworld\nWHERE\narea &lt; 2000 AND gdp &gt; 5000000000</answer>
+		</item>
+	</section>
 
-<section>
-	<item>
-		<id>ex4</id>
-		<title>Example 4</title>
-		<content>
-		<query>
-  </item>
-	<item>
-		<id>q4</id>
-		<title>Question 4</title>
-		<content>
-		<answer>
-  </item>
-</section>
+	<section>
+		<item>
+			<id>ex4</id>
+			<title>Example 4</title>
+			<content>The keyword IN allows us to check if an item is in a list. The example shows the name and population for the countries 'Ireland', 'Iceland' and 'Denmark'</content>
+			<query>SELECT\nname, population\nFROM\nworld\nWHERE\nname IN ('Ireland', 'Iceland', 'Denmark')</query>
+		</item>
+		<item>
+			<id>q4</id>
+			<title>Question 4</title>
+			<content>Show the name and population for 'China', 'Vietnam', 'Japan'</content>
+			<answer>SELECT\nname, population\nFROM\nworld\nWHERE\nname IN ('China', 'Vietnam', 'Japan')</answer>
+		</item>
+	</section>
 
-<section>
-	<item>
-		<id>ex5</id>
-		<title>Example 5</title>
-		<content>
-		<query>
-  </item>
-	<item>
-		<id>q5</id>
-		<title>Question 5</title>
-		<content>
-		<answer>
-  </item>
-</section>
+	<section>
+		<item>
+			<id>ex5</id>
+			<title>Example 5</title>
+			<content>What are the countries beginning with 'D'? The word LIKE permits pattern matching. % is the wildcard. The examples shows countries beginning with 'D'.</content>
+			<query>SELECT\nname\nFROM\nworld\nWHERE\nname LIKE 'D%'</query>
+		</item>
+		<item>
+			<id>q5a</id>
+			<title>Question 5a</title>
+			<content>Show only the name of each country that begins with 'S'.</content>
+			<answer>SELECT\nname\nFROM\nworld\nWHERE\nname LIKE 'S%'</answer>
+		</item>
+		<item>
+			<id>q5b</id>
+			<title>Question 5b</title>
+			<content>Show the name and region of each country that begins with 'T' and ends with a 'n'.</content>
+			<answer>SELECT\nname, region\nFROM\nworld\nWHERE\nname LIKE 'T%n'</answer>
+		</item>
+	</section>
 
-<section>
-	<item>
-		<id>ex6</id>
-		<title>Example 6</title>
-		<content>
-		<query>
-  </item>
-	<item>
-		<id>q6</id>
-		<title>Question 6</title>
-		<content>
-		<answer>
-  </item>
-</section>
+	<section>
+		<item>
+			<id>ex6</id>
+			<title>Example 6</title>
+			<content>Which countries are not too small and not too big? BETWEEN allows range checking - note that it is inclusive.</content>
+			<query>SELECT\nname, area\nFROM\nworld\nWHERE\narea BETWEEN 207600 AND 244820</query>
+		</item>
+		<item>
+			<id>q6a</id>
+			<title>Question 6A</title>
+			<content>Lets find all the small countries where the area is between 10,000 km2 and 50,000 km2. List the name and area.</content>
+			<answer>SELECT\nname, population\nFROM\nworld\nWHERE\narea BETWEEN 10000 AND 50000</answer>
+		</item>
+		<item>
+			<id>q6b</id>
+			<title>Question 6B</title>
+			<content>List the country names and population where the population is between 35 million and 75 million. Display the population in millions please.</content>
+			<answer>SELECT\nname, population/1000000\nFROM\nworld\nWHERE\npopulation BETWEEN 35000000 AND 75000000</answer>
+		</item>
+	</section>
+</sections>
