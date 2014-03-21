@@ -1,3 +1,4 @@
+require 'yaml'
 class StaticPagesController < ApplicationController
 
   class SQLView
@@ -11,7 +12,8 @@ class StaticPagesController < ApplicationController
   def section_one
     @section_title = '1. The SELECT command'
 
-    Slesson = XmlSimple.xml_in(Rails.root.to_s + '/app/controllers/lessons/lesson_one.xml')
+    filepath = Rails.root.to_s + '/app/assets/lessons/lesson_one.yaml'
+    @lesson = YAML.load_file(filepath)
 
     render :section_view
   end
