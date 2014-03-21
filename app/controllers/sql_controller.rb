@@ -4,14 +4,14 @@ class SqlController < ApplicationController
 		query = params['query']
 		answer = params['answer']
 
-		blacklist = %w(hello, drop, insert, update, set)
+		blacklist = %w(DROP INSERT UPDATE SET)
 
 		blacklist.each do |word|
-			if query.include?(word) || answer.include?(word)
-				console.log("BLACKLIST WORD DETECTED!")
-				return render :json => {status: 'BLACKLIST'}
+			if query.upcase.include?(word) || answer.upcase.include?(word)
+				return render :json => {status: "\"#{word}\" is blacklisted!"}
 			end
 		end
+
 
 		db = PG::Connection.open(:dbname => 'sql_pql_development')
 

@@ -33,9 +33,28 @@ $(document).ready(function() {
 	});
 });
 
+var evilCount = 0;
+
 var queryDB = function(outputWindow, textarea) {
 	var query = $(textarea).val();
 	var answer = $(textarea).data('answer');
+
+	// Prevent SQL inejction!
+	var invalid = false;
+	var blacklist = ['DROP', 'INSERT', 'UPDATE', 'SET'];
+	blacklist.forEach(function(word) {
+		if (query.toUpperCase().indexOf(word) !== -1 || answer.toUpperCase().indexOf(word) !== -1) {
+			invalid = true;
+			evilCount++;
+			if (evilCount >= 3) {
+				console.log('Get the fuck out!');
+				window.location = 'https://www.youtube.com/watch?v=oHg5SJYRHA0';
+			}
+			alert('Wise guy, huh? ' + word + ' is not allowed!');
+			return;
+		}
+	});
+	if (invalid) return;
 
 	// Show loading on output screen
 	outputWindow.empty();
