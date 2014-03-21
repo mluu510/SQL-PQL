@@ -4,6 +4,15 @@ class SqlController < ApplicationController
 		query = params['query']
 		answer = params['answer']
 
+		blacklist = %w(hello, drop, insert, update, set)
+
+		blacklist.each do |word|
+			if query.include?(word) || answer.include?(word)
+				console.log("BLACKLIST WORD DETECTED!")
+				return render :json => {status: 'BLACKLIST'}
+			end
+		end
+
 		db = PG::Connection.open(:dbname => 'sql_pql_development')
 
 		pg_results = db.exec_params(query)
@@ -30,5 +39,10 @@ class SqlController < ApplicationController
 			return 'Result has too many columns'
 		end
 		return 'Correct!'
+	end
+
+	private
+	def sanitize(str)
+		balcklist = %w(drop, insert, update, set)
 	end
 end
