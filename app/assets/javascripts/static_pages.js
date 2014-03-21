@@ -86,52 +86,10 @@ var renderErrorView = function(outputWindow) {
 }
 
 // Renders the view for the output screen
-var render = function(results, $targetEl) {
-	$targetEl.empty();
+var render = function(result, $targetEl) {
 
-	// Render alert view
-	if (results.status) {
-		var $alertView = $('<div>')
-		if (results.status === 'Correct!') {
-			$alertView.addClass('alert alert-success alert-dismissable strong');
-		} else {
-			$alertView.addClass('alert alert-danger alert-dismissable');
-		}
-		$alertView.text(results.status);
-		console.log(results.status);
-		$targetEl.append($alertView);
-	}
-
-	// Create results header
-	var $header = $('<h3>');
-	$header.text('Result:');
-	$targetEl.append($header);
-
-	// Create table to display results
-	var $table = $('<table>');
-	$table.addClass('table table-striped');
-
-	// Header row for table
-	$hrow = $('<tr>');
-	results.fields.forEach(function(field_name) {
-		var $th = $('<th>');
-		$th.text(field_name);
-		$hrow.append($th);
-	});
-	$table.append($hrow);
-
-	// Each rows of the result
-	results.rows.forEach(function(row) {
-		var $row = $('<tr>');
-
-		row.forEach(function(column) {
-			var $td = $('<td>');
-			$td.text(column);
-			$row.append($td);
-		});
-
-		$table.append($row);
-	});
-
-	$targetEl.append($table);
+	var template = JST['result']
+	var content = template({ result: result });
+	$targetEl.html(content);
 }
+

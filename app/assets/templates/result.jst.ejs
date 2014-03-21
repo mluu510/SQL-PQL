@@ -1,0 +1,27 @@
+<% if (result.status) { %>
+<% var alertType = result.status === 'Correct!' ? 'alert-success' : 'alert-danger' %>
+<div class="alert <%= alertType %> alert-dismissable strong">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= result.status %>
+</div>
+<% } %>
+
+<h3>Result:</h3>
+
+<table class="table table-striped">
+
+<tr>
+  <% result.fields.forEach(function(fieldName) { %>
+	  <th><%= fieldName %></th>
+  <% }) %>
+</tr>
+
+<% result.rows.forEach(function(row) { %>
+	<tr>
+	  <% row.forEach(function(columnName) { %>
+		  <td><%= columnName %></td>
+	  <% }) %>
+	</tr>
+<% }) %>
+
+</table>

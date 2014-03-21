@@ -8,6 +8,6 @@ window.SqlPql = {
   }
 };
 
-$(document).ready(function(){
-  SqlPql.initialize();
-});
+// $(document).ready(function(){
+//   SqlPql.initialize();
+// });
