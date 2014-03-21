@@ -49,14 +49,28 @@ var queryDB = function(outputWindow, textarea) {
 		render(results, outputWindow);
 	})
 	.fail(function() {
-		alert('Invalid SQL statement!')
+		renderErrorView(outputWindow);
 	});
+}
+
+var renderErrorView = function(outputWindow) {
+	outputWindow.empty();
+	var $errorEl = $('<h3>');
+	$errorEl.addClass('text-center');
+	$errorEl.text('Invalid SQL Statment!');
+	outputWindow.append($errorEl);
+
+	var $subEl = $('<p>');
+	$subEl.addClass('text-center');
+	$subEl.text('Please try again')
+	outputWindow.append($subEl);
 }
 
 // Renders the view for the output screen
 var render = function(results, $targetEl) {
 	$targetEl.empty();
 
+	// Render alert view
 	if (results.status) {
 		var $alertView = $('<div>')
 		if (results.status === 'Correct!') {
@@ -71,7 +85,7 @@ var render = function(results, $targetEl) {
 
 	// Create results header
 	var $header = $('<h3>');
-	$header.text('Results:');
+	$header.text('Result:');
 	$targetEl.append($header);
 
 	// Create table to display results

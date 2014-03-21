@@ -1,70 +1,17 @@
-<div class="row">
-	<h1 class="page-header">1. The SELECT command</h1>
-</div>
+<style>
+.intro {
+	height: 500px;
+	padding-top: 200px;
+	text-align: center;
+	background: url('<%= image_url("wheat6.jpg") %>');
+	background-size: cover;
+	color: white;
+	font-family: 'Ruluko', sans-serif;
+}
+</style>
 
-<% @sql_views.each do |view| %>
-	<%= render 'tab_view', view: view %>
-<% end %>
-
-
-<%= render 'sql_window',
-	answer: nil,
-	section_content: 'This query shows all information for the the table "world". The * (asterik) means display every column.',
-	query_statement: 'SELECT
-*
-FROM
-world' %>
-
-<% render 'tab_view',
-
-
-<!-- Nav tabs -->
-<ul class="nav nav-tabs">
-	<li class="active"><a href="#ex1" data-toggle="tab">Example 1</a></li>
-	<li><a href="#q1" data-toggle="tab">Question 1</a></li>
-</ul>
-<!-- Tab panes -->
-<div class="tab-content top-buffer">
-	<div class="tab-pane active" id="ex1">
-		<%= render 'sql_window',
-		answer: nil,
-		section_content: 'To display just the country name and population, replace the * with "name, population"',
-		query_statement: 'SELECT
-name, population
-FROM
-world' %>
-	</div>
-	<div class="tab-pane" id="q1">
-
-		<%= render 'sql_window',
-		answer: 'answer1',
-		section_content: 'Display the name and area from table "world."',
-		query_statement: nil%>
-	</div>
-</div>
-
-<!-- Nav tabs -->
-<ul class="nav nav-tabs">
-	<li class="active"><a href="#ex2" data-toggle="tab">Example 2</a></li>
-	<li><a href="#q2" data-toggle="tab">Question 2</a></li>
-</ul>
-<!-- Tab panes -->
-<div class="tab-content top-buffer">
-	<div class="tab-pane active" id="ex2">
-		<%= render 'sql_window',
-		answer: nil,
-		section_content: 'The query shows the population density population/area for each country where the area is over 5,000,000 km2.',
-		query_statement: 'SELECT
-name, population/area
-FROM
-world
-WHERE area > 5000000' %>
-	</div>
-	<div class="tab-pane" id="q2">
-
-		<%= render 'sql_window',
-		answer: 'answer2',
-		section_content: 'Show the per capita gdp: gdp/population for each country where the area is over 5,000,000 km2',
-		query_statement: nil%>
-	</div>
+<div class="jumbotron intro">
+  <h1>Hello there!</h1>
+  <p>Welcome to SQL-PQL ("sequel prequel") an interactive SQL learning guide.</p>
+  <p><%= link_to 'Start Learning', section_one_url, class: 'btn btn-lg btn-primary' %></p>
 </div>
