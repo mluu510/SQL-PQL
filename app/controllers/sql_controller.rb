@@ -1,3 +1,4 @@
+
 class SqlController < ApplicationController
 	def run
 		sleep 1

@@ -46,4 +46,7 @@ end
  gem 'debugger', group: [:development, :test]
 
 gem 'bootstrap-sass', '~> 3.1.1'
-gem 'nokogiri'
+
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'xml-simple'
