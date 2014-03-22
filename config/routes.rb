@@ -54,8 +54,7 @@ SqlPql::Application.routes.draw do
   #     resources :products
   #   end
   root :to => 'static_pages#index'
-  get 'section_one' => 'static_pages#section_one'
-  get 'section_two' => 'static_pages#section_two'
+  get 'lesson/:id' => 'static_pages#lesson'
 
   get 'run' => 'sql#run'
 end

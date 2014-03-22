@@ -1,10 +1,10 @@
 <div class="container">
 <div class="row">
-	<h1 class="page-header"><%= @section_title %></h1>
+	<h1 class="page-header"><%= @title %></h1>
 </div>
 
 
-<% @lesson.each do |section| %>
+<% @sections.each do |section| %>
 	<%= render 'tab_view', section: section %>
 <% end %>
 </div>

@@ -8,6 +8,7 @@ class Item
   end
 end
 
+title = '1. The SELECT command'
 
 ex1_view = Item.new
 ex1_view.id = 'ex1'
@@ -111,7 +112,7 @@ q6b_view.answer = "SELECT\nname, population/1000000\nFROM\nworld\nWHERE\npopulat
 ex_q6 = [ex6_view.to_hash, q6a_view.to_hash, q6b_view.to_hash]
 
 
-@ex_qs = [ex_q1, ex_q2, ex_q3, ex_q4, ex_q5, ex_q6]
+@ex_qs = { title: title, sections: [ex_q1, ex_q2, ex_q3, ex_q4, ex_q5, ex_q6] }
 
 
 

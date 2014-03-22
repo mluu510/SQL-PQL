@@ -9,6 +9,18 @@ class StaticPagesController < ApplicationController
   def index
   end
 
+  def lesson
+    filename = "lesson_#{params[:id].to_i.to_words}.yaml"
+    filepath = Rails.root.to_s + "/app/assets/lessons/#{filename}"
+    lesson = YAML.load_file(filepath)
+
+    @title = lesson[:title]
+    @sections = lesson[:sections]
+
+    render :lesson_view
+    end
+
+
   def section_one
     @section_title = '1. The SELECT command'
 

@@ -87,6 +87,9 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.9.0)
+    numbers_and_words (0.10.0)
+      activesupport
+      i18n
     pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
@@ -154,6 +157,7 @@ DEPENDENCIES
   debugger
   jbuilder (~> 1.2)
   jquery-rails
+  numbers_and_words
   pg
   rails (= 4.0.3)
   sass-rails (~> 4.0.0)
