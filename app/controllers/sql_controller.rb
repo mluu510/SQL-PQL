@@ -39,6 +39,15 @@ class SqlController < ApplicationController
 		elsif result.nfields > answer.nfields
 			return 'Result has too many columns'
 		end
+
+		for i in 0...result.ntuples
+			r_row = result[i]
+			a_row = answer[i]
+			r_row.each do |key, r_value|
+				a_value = a_row[key]
+				return "Result don't match answer" if r_value != a_value
+			end
+		end
 		return 'Correct!'
 	end
 

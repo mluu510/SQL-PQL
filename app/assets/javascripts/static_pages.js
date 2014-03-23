@@ -76,17 +76,6 @@ var renderErrorView = function($outputWindow) {
 	var template = JST['output_error'];
 	var content = template();
 	$outputWindow.html(content);
-
-	// outputWindow.empty();
-	// var $errorEl = $('<h3>');
-	// $errorEl.addClass('text-center');
-	// $errorEl.text('Invalid SQL Statment!');
-	// outputWindow.append($errorEl);
-	//
-	// var $subEl = $('<p>');
-	// $subEl.addClass('text-center');
-	// $subEl.text('Please try again')
-	// outputWindow.append($subEl);
 }
 
 // Renders the view for the output screen

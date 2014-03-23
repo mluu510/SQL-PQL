@@ -42,7 +42,7 @@
       area > 5000000'
   - :id: q2
     :title: Question 2
-    :content: Show the per capita gdp (gdp/population) for each country where the
+    :content: Calculate the "per capita gdp" (gdp/population) for each country where the
       area is over 5,000,000 km2
     :answer: ! 'SELECT
 
@@ -183,7 +183,7 @@
   - :id: q6a
     :title: Question 6A
     :content: Lets find all the small countries where the area is between 10,000 km2
-      and 50,000 km2. List the name and area.
+      and 50,000 km2. List the name and population.
     :answer: ! 'SELECT
 
       name, population
