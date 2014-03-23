@@ -13,17 +13,22 @@ class SqlController < ApplicationController
 			end
 		end
 
-		db = PG::Connection.open(:dbname => 'sql_pql_development')
-		pg_results = db.exec_params(query)
-		# puts pg_results.error_messages
+		pg_result = nil
+		begin
+			db = PG::Connection.open(:dbname => 'sql_pql_development')
+			pg_result = db.exec_params(query)
+		rescue PGError => e
+			puts e
+			return render :json => {error: e.message}
+		end
 
 
 		if answer.empty?
-			render :json => {fields: pg_results.fields, rows:pg_results.values}
+			render :json => {fields: pg_result.fields, rows:pg_result.values}
 		else
 			pg_answer = db.exec_params(answer)
-			status = compare_results(pg_results, pg_answer)
-			render :json => {fields: pg_results.fields, rows:pg_results.values, status: status}
+			status = compare_results(pg_result, pg_answer)
+			render :json => {fields: pg_result.fields, rows:pg_result.values, status: status}
 		end
 	end
 

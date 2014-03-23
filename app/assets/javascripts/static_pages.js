@@ -65,17 +65,24 @@ var queryDB = function(outputWindow, textarea) {
 
 	// AJAX query
 	$.get('/run', { query: query, answer: answer })
-	.done(function(results) {
-		render(results, outputWindow);
+	.done(function(result) {
+		if (result.error) {
+			console.log(result.error);
+			renderErrorView(result.error, outputWindow);
+		} else {
+			render(result, outputWindow);
+		}
 	})
 	.fail(function() {
-		renderErrorView(outputWindow);
+		console.log('ERROR');
 	});
 }
 
-var renderErrorView = function($outputWindow) {
+var renderErrorView = function(error_message, $outputWindow) {
 	var template = JST['output_error'];
-	var content = template();
+	var content = template({
+		error: error_message
+	});
 	$outputWindow.html(content);
 }
 
