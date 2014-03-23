@@ -13,20 +13,18 @@ class SqlController < ApplicationController
 			end
 		end
 
-
 		db = PG::Connection.open(:dbname => 'sql_pql_development')
-
 		pg_results = db.exec_params(query)
+		# puts pg_results.error_messages
 
-		unless answer.empty?
-			puts 'COMPARING RESULTS'
+
+		if answer.empty?
+			render :json => {fields: pg_results.fields, rows:pg_results.values}
+		else
 			pg_answer = db.exec_params(answer)
 			status = compare_results(pg_results, pg_answer)
 			render :json => {fields: pg_results.fields, rows:pg_results.values, status: status}
-		else
-			render :json => {fields: pg_results.fields, rows:pg_results.values}
 		end
-
 	end
 
 	def compare_results(result, answer)

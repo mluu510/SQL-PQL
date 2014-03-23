@@ -19,6 +19,7 @@
 //= require underscore
 //= require backbone
 //= require sql_pql
+//= require underscore.string.min
 //= require_tree ../templates
 
 //= require_tree .

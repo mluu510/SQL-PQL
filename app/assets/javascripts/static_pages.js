@@ -29,6 +29,7 @@ $(document).ready(function() {
 			var siblingDiv = $(parent).prev();
 			var textarea = $(siblingDiv).find('.sql-input');
 			textarea.val(textarea.data('answer'));
+			var submitButton = $(e.target).siblings
 		}
 	});
 });
