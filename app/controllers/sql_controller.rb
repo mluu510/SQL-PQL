@@ -27,6 +27,7 @@ class SqlController < ApplicationController
 
 			db = PG::Connection.open(host: host, port: port, dbname: database, user: user, password: password)
 			pg_result = db.exec_params(query)
+      db.close
 		rescue PGError => e
 			puts e
 			return render :json => {error: e.message}
