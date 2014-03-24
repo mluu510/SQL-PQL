@@ -28,9 +28,9 @@ class SqlController < ApplicationController
 
 		rescue PGError => e
 			puts "///////////////////////ERROR: #{e}"
-			return render :json => {error: e.message}
-    ensure
       db.close
+			return render :json => {error: e.message}
+
 		end
 
 

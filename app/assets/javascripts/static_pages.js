@@ -41,6 +41,7 @@ $(document).ready(function() {
 	});
 });
 
+// QUERYING THE DATABASE
 var evilCount = 0;
 
 var queryDB = function(outputWindow, textarea) {
@@ -82,6 +83,8 @@ var queryDB = function(outputWindow, textarea) {
 	});
 }
 
+// VIEW RENDERING FUNCTIONS
+
 var renderLoadingView = function($outputWindow) {
 	var template = JST['loading_screen'];
 	var content = template();
@@ -102,7 +105,6 @@ var renderServerErrorView = function($outputWindow) {
 	$outputWindow.html(content);
 }
 
-// Renders the view for the output screen
 var render = function(result, $targetEl) {
 
 	var template = JST['result'];
