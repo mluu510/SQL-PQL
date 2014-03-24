@@ -15,11 +15,17 @@ class SqlController < ApplicationController
 
 		pg_result = nil
 		begin
-      config = Rails.configuration.database_configuration
-      database = config[Rails.env]['database']
-      puts '************ database ******************'
+      config = Rails.configuration.database_configuration[Rails.env]
+      database = config['database']
+      host = config['host']
+      port = config['port']
+      user = config['username']
+      password = config['password']
 
-			db = PG::Connection.open(:dbname => database)
+      puts '************ #{database} ******************'
+      puts host, port, user, password
+
+			db = PG::Connection.open(host: host, port: port, dbname: database, user: user, password: password)
 			pg_result = db.exec_params(query)
 		rescue PGError => e
 			puts e
