@@ -12,6 +12,9 @@ test:
 
 production:
   adapter: postgresql
-  database: sql_pql_production
+  database: d43f44tu4ftjmr
   pool: 5
   timeout: 5000
+	user:	eqcyuzdzpnoqdy
+	port:	5432
+	password: rr08KUBAmFfhYam2liTYFjyyfw
