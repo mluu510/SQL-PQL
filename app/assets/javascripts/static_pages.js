@@ -71,14 +71,14 @@ var queryDB = function(outputWindow, textarea) {
 	$.get('/run', { query: query, answer: answer })
 	.done(function(result) {
 		if (result.error) {
-			console.log(result.error);
 			renderErrorView(result.error, outputWindow);
 		} else {
 			render(result, outputWindow);
 		}
 	})
 	.fail(function() {
-		console.log('ERROR');
+		console.log('SERVER ERROR 500');
+		renderServerErrorView(outputWindow);
 	});
 }
 
@@ -93,6 +93,12 @@ var renderErrorView = function(error_message, $outputWindow) {
 	var content = template({
 		error: error_message
 	});
+	$outputWindow.html(content);
+}
+
+var renderServerErrorView = function($outputWindow) {
+	var template = JST['server_error'];
+	var content = template();
 	$outputWindow.html(content);
 }
 

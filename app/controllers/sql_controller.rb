@@ -14,19 +14,20 @@ class SqlController < ApplicationController
 		end
 
 		pg_result = nil
-		begin
-      config = Rails.configuration.database_configuration[Rails.env]
-      database = config['database']
-      host = config['host']
-      port = config['port']
-      user = config['username']
-      password = config['password']
+    config = Rails.configuration.database_configuration[Rails.env]
+    database = config['database']
+    host = config['host']
+    port = config['port']
+    user = config['username']
+    password = config['password']
 
-			db = PG::Connection.open(host: host, port: port, dbname: database, user: user, password: password)
+		db = PG::Connection.open(host: host, port: port, dbname: database, user: user, password: password)
+
+		begin
 			pg_result = db.exec_params(query)
 
 		rescue PGError => e
-			puts e
+			puts "///////////////////////ERROR: #{e}"
 			return render :json => {error: e.message}
     ensure
       db.close

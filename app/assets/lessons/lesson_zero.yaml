@@ -5,7 +5,7 @@
 :sections:
 - - :id: ex1
     :title: Example 1
-    :content: This query shows you how to get all the columns and rows from the table <span class="badge">world</span>.
+    :content: This query shows you how to get all the columns and rows from the table <span class="badge">world</span>. Press <span class="label label-primary">Submit</span> when you're ready.
     :query: ! 'SELECT
 
       *
