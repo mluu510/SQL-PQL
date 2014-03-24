@@ -22,16 +22,14 @@ class SqlController < ApplicationController
       user = config['username']
       password = config['password']
 
-      puts '************ #{database} ******************'
-      puts host, port, user, password
-
 			db = PG::Connection.open(host: host, port: port, dbname: database, user: user, password: password)
 			pg_result = db.exec_params(query)
 
 		rescue PGError => e
 			puts e
-      db.close
 			return render :json => {error: e.message}
+    ensure
+      db.close
 		end
 
 

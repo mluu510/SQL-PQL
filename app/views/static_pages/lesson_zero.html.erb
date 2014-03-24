@@ -1,0 +1,46 @@
+<div class="container">
+
+<div class="row">
+	<h1 class="page-header">0. The world of SQL</h1>
+</div>
+
+<div class="row">
+	<h3>What is SQL?</h3>
+	<ul>
+		<li>SQL stands for Structured Query Language</li>
+		<li>SQL lets you access and manipulate databases</li>
+		<li>SQL is an ANSI (American National Standards Institute) standard</li>
+	</ul>
+
+	<h3>What Can SQL do?</h3>
+	<ul>
+		<li>SQL can execute queries against a database</li>
+		<li>SQL can retrieve data from a database</li>
+		<li>SQL can insert records in a database</li>
+		<li>SQL can update records in a database</li>
+		<li>SQL can delete records from a database</li>
+		<li>SQL can create new databases</li>
+		<li>SQL can create new tables in a database</li>
+		<li>SQL can create stored procedures in a database</li>
+		<li>SQL can create views in a database</li>
+		<li>SQL can set permissions on tables, procedures, and views</li>
+	</ul>
+</div>
+
+<div class="row">
+	<div class="panel panel-default col col-md-8 col-md-offset-2">
+	  <div class="panel-body">
+			The table you'll be working with is called <span class="badge">world</span>. Here is a <strong>compress sample</strong> of the table. You can also get a preview of the table by pressing <span class="label label-default"><span class="glyphicon glyphicon-list"></span> Show Table <b class="caret"></b></span> in the navigation bar above. Give it a try now!
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="well col col-md-8 col-md-offset-2">
+	<%= render 'world_table' %>
+	</div>
+</div>
+
+<% @sections.each do |section| %>
+	<%= render 'section_view', section: section %>
+<% end %>

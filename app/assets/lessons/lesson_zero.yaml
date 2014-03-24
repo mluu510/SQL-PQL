@@ -1,0 +1,15 @@
+---
+:next_lesson:
+  :title: 1. The SELECT command
+  :link: 1
+:sections:
+- - :id: ex1
+    :title: Example 1
+    :content: This query shows you how to get all the columns and rows from the table <span class="badge">world</span>.
+    :query: ! 'SELECT
+
+      *
+
+      FROM
+
+      world'

@@ -11,7 +11,11 @@ class StaticPagesController < ApplicationController
     @sections = lesson[:sections]
     @next_lesson = lesson[:next_lesson]
 
-    render :lesson_view
+    if params[:id] == '0'
+      render :lesson_zero
+    else
+      render :lesson_view
     end
+  end
 
 end
