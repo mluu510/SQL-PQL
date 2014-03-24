@@ -58,10 +58,7 @@ var queryDB = function(outputWindow, textarea) {
 	if (invalid) return;
 
 	// Show loading on output screen
-	outputWindow.empty();
-	var $loadingEl = $('<h4>');
-	$loadingEl.text('Querying Database...');
-	outputWindow.append($loadingEl);
+	renderLoadingView(outputWindow);
 
 	// AJAX query
 	$.get('/run', { query: query, answer: answer })
@@ -76,6 +73,12 @@ var queryDB = function(outputWindow, textarea) {
 	.fail(function() {
 		console.log('ERROR');
 	});
+}
+
+var renderLoadingView = function($outputWindow) {
+	var template = JST['loading_screen'];
+	var content = template();
+	$outputWindow.html(content);
 }
 
 var renderErrorView = function(error_message, $outputWindow) {
