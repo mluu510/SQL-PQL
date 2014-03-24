@@ -27,9 +27,10 @@ class SqlController < ApplicationController
 
 			db = PG::Connection.open(host: host, port: port, dbname: database, user: user, password: password)
 			pg_result = db.exec_params(query)
-      db.close
+
 		rescue PGError => e
 			puts e
+      db.close
 			return render :json => {error: e.message}
 		end
 
@@ -41,6 +42,7 @@ class SqlController < ApplicationController
 			status = compare_results(pg_result, pg_answer)
 			render :json => {fields: pg_result.fields, rows:pg_result.values, status: status}
 		end
+    db.close
 	end
 
 	def compare_results(result, answer)
