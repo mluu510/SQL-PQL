@@ -6,7 +6,7 @@
 :sections:
 - - :id: ex1
     :title: Example 1
-    :content: To display just the country name and population, replace the * with <span class="label label-success">name, population</span>
+    :content: To display just the country name and population, replace the * with <span class="badge">name, population</span>
     :query: ! 'SELECT
 
       name, population
@@ -17,7 +17,7 @@
 
   - :id: q1
     :title: Question 1
-    :content: Display the name and area from table "world."
+    :content: Display the <span class="badge">name</span> and <span class="badge">area</span> from table <span class="badge">world</span>
     :answer: ! 'SELECT
 
       name, area
@@ -28,9 +28,9 @@
 
 - - :id: ex2
     :title: Example 2
-    :content: The query shows the population density (population/area) for each country
-      where the area is over 5,000,000 km2.
-    :answer: 
+    :content: The query shows the population density; <span class="badge">population/area</span>, for each country
+      where the <span class="badge">area</span> is over 5,000,000 km<sup>2</sup>.
+    :answer:
     :query: ! 'SELECT
 
       name, population/area
@@ -44,8 +44,8 @@
       area > 5000000'
   - :id: q2
     :title: Question 2
-    :content: Calculate the "per capita gdp" (gdp/population) for each country where the
-      area is over 5,000,000 km2
+    :content: Calculate the "per capita gdp"; <span class="badge">gdp/population</span>, for each country where the
+      <span class="badge">area</span> is over 5,000,000 km<sup>2</sup>
     :answer: ! 'SELECT
 
       name, gdp/population
@@ -57,12 +57,12 @@
       WHERE
 
       area > 5000000'
-    :query: 
+    :query:
 - - :id: ex3
     :title: Example 3
-    :content: We use AND to ensure that two or more conditions hold true. The example
-      shows the countries where the population is small and the gdp is high.
-    :answer: 
+    :content: We use <span class="badge">AND</span> to ensure that two or more conditions hold true. The example
+      shows the countries where the <span class="badge">population</span> is small and the <span class="badge">gdp</span> is high.
+    :answer:
     :query: ! 'SELECT
 
       name , region
@@ -74,8 +74,8 @@
       population < 2000000 AND gdp > 5000000000'
   - :id: q3
     :title: Question 3
-    :content: Lets find the richest small countries. Show the name and region where
-      the area is less then 2,000 km2 and the gdp is more than $5,000,000,000
+    :content: Lets find the richest small countries. Show the <span class="badge">name</span> and <span class="badge">region</span> where
+      the <span class="badge">area</span> is less then 2,000 km<sup>2</sup> and the <span class="badge">gdp</span> is more than $5,000,000,000
     :answer: ! 'SELECT
 
       name, region
@@ -87,12 +87,12 @@
       WHERE
 
       area < 2000 AND gdp > 5000000000'
-    :query: 
+    :query:
 - - :id: ex4
     :title: Example 4
-    :content: The keyword IN allows us to check if an item is in a list. The example
-      shows the name and population for the countries 'Ireland', 'Iceland' and 'Denmark'
-    :answer: 
+    :content: The keyword <span class="badge">IN</span> allows us to check if an item is in a list. The example
+      shows the <span class="badge">name</span> and <span class="badge">population</span> for the countries <span class="badge">'Ireland', 'Iceland', 'Denmark'</span>
+    :answer:
     :query: ! 'SELECT
 
       name, population
@@ -106,7 +106,7 @@
       name IN (''Ireland'', ''Iceland'', ''Denmark'')'
   - :id: q4
     :title: Question 4
-    :content: Show the name and population for 'China', 'Vietnam', 'Japan'
+    :content: Show the <span class="badge">name</span> and <span class="badge">population</span> for <span class="badge">'China', 'Vietnam', 'Japan'</span>
     :answer: ! 'SELECT
 
       name, population
@@ -118,12 +118,12 @@
       WHERE
 
       name IN (''China'', ''Vietnam'', ''Japan'')'
-    :query: 
+    :query:
 - - :id: ex5
     :title: Example 5
-    :content: What are the countries beginning with 'D'? The word LIKE permits pattern
-      matching. % is the wildcard. The examples shows countries beginning with 'D'.
-    :answer: 
+    :content: What are the countries beginning with 'D'? The word <span class="badge">LIKE</span> permits pattern
+      matching. <span class="badge">%</span> is the wildcard. The examples shows countries beginning with 'D'.
+    :answer:
     :query: ! 'SELECT
 
       name
@@ -137,7 +137,7 @@
       name LIKE ''D%'''
   - :id: q5a
     :title: Question 5A
-    :content: Show only the name of each country that begins with 'S'.
+    :content: Show only the <span class="badge">name</span> of the countries that begins with 'S'. Don't forget to get use <span class="badge">%</span> as the wildcard.
     :answer: ! 'SELECT
 
       name
@@ -149,10 +149,10 @@
       WHERE
 
       name LIKE ''S%'''
-    :query: 
+    :query:
   - :id: q5b
     :title: Question 5B
-    :content: Show the name and region of each country that begins with 'T' and ends
+    :content: Show the <span class="badge">name</span> and <span class="badge">region</span> of countries that begins with 'T' and ends
       with a 'n'.
     :answer: ! 'SELECT
 
@@ -165,12 +165,12 @@
       WHERE
 
       name LIKE ''T%n'''
-    :query: 
+    :query:
 - - :id: ex6
     :title: Example 6
-    :content: Which countries are not too small and not too big? BETWEEN allows range
+    :content: Which countries are not too small and not too big? <span class="badge">BETWEEN</span> allows range
       checking - note that it is inclusive.
-    :answer: 
+    :answer:
     :query: ! 'SELECT
 
       name, area
@@ -184,8 +184,8 @@
       area BETWEEN 207600 AND 244820'
   - :id: q6a
     :title: Question 6A
-    :content: Lets find all the small countries where the area is between 10,000 km2
-      and 50,000 km2. List the name and population.
+    :content: Lets find all the small countries where the <span class="badge">area</span> is between 10,000 km<sup>2</sup>
+      and 50,000 km<sup>2</sup>. List the <span class="badge">name</span> and <span class="badge">population.</span>
     :answer: ! 'SELECT
 
       name, population
@@ -197,10 +197,10 @@
       WHERE
 
       area BETWEEN 10000 AND 50000'
-    :query: 
+    :query:
   - :id: q6b
     :title: Question 6B
-    :content: List the country names and population where the population is between
+    :content: List the country's <span class="badge">name</span> and <span class="badge">population</span> where the population is <span class="badge">BETWEEN</span>
       35 million and 75 million. Display the population in millions please.
     :answer: ! 'SELECT
 
@@ -213,4 +213,4 @@
       WHERE
 
       population BETWEEN 35000000 AND 75000000'
-    :query: 
+    :query:

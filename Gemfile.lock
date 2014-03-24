@@ -105,6 +105,7 @@ GEM
       sprockets-rails (~> 2.0.0)
     rails-observers (0.1.2)
       activemodel (~> 4.0)
+    rails_serve_static_assets (0.0.2)
     railties (4.0.3)
       actionpack (= 4.0.3)
       activesupport (= 4.0.3)
@@ -138,8 +139,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.1)
-      coffee-rails
     tzinfo (0.3.39)
     uglifier (2.5.0)
       execjs (>= 0.3.0)
@@ -160,7 +159,7 @@ DEPENDENCIES
   numbers_and_words
   pg
   rails (= 4.0.3)
+  rails_serve_static_assets
   sass-rails (~> 4.0.0)
   sdoc
-  turbolinks
   uglifier (>= 1.3.0)

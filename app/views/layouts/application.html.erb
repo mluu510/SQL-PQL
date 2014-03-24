@@ -24,6 +24,8 @@
 	      <a class="navbar-brand" href="<%= root_url %>">SQL-PQL</a>
 	    </div>
 
+
+
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
@@ -33,14 +35,14 @@
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
 	            <li><a href="/lesson/1">1. The SELECT command</a></li>
-	            <li><a href="#">2. The WHERE clause</a></li>
+	            <li><a href="/lesson/2">2. The WHERE clause</a></li>
 	            <li><a href="#">3. Advanced SQL</a></li>
 	          </ul>
 	        </li>
 
-	        <li class="dropdown">
+	        <li class="dropdown keep-open">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list"></span> Show Table <b class="caret"></b></a>
-	          <ul class="dropdown-menu dropdown-table">
+	          <ul class="dropdown-menu dropdown-table semi-transparent">
 	          	<div class="">
 
 	          		<%= render 'world_table' %>

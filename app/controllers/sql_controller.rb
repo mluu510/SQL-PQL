@@ -1,7 +1,7 @@
 
 class SqlController < ApplicationController
 	def run
-		sleep 1
+    # sleep 1
 		query = params['query']
 		answer = params['answer']
 
@@ -48,7 +48,7 @@ class SqlController < ApplicationController
 			a_row = answer[i]
 			return "Result don't match" if r_row.values != a_row.values
 		end
-		
+
 		return 'Correct!'
 	end
 
