@@ -42,7 +42,7 @@ var queryDB = function(outputWindow, textarea) {
 
 	// Prevent SQL inejction!
 	var invalid = false;
-	var blacklist = ['DROP', 'INSERT', 'UPDATE', 'DELETE', 'ALTER'];
+	var blacklist = ['DROP', 'INSERT', 'UPDATE', 'DELETE', 'ALTER', 'CREATE'];
 	blacklist.forEach(function(word) {
 		if (query.toUpperCase().indexOf(word) !== -1 || answer.toUpperCase().indexOf(word) !== -1) {
 			invalid = true;

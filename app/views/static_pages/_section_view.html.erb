@@ -17,7 +17,7 @@
 <div class="tab-content top-buffer">
 	<% section.each do |item| %>
 		<div class="tab-pane <%= 'active' if section.first == item %>" id="<%= item[:id] %>">
-			<%= render 'sql_window',
+			<%= render 'sql_view',
 				content: item[:content],
 				query: item[:query],
 				answer: item[:answer]
@@ -25,3 +25,4 @@
 		</div>
 	<% end %>
 </div>
+

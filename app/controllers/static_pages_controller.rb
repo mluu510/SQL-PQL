@@ -1,11 +1,4 @@
-require 'yaml'
 class StaticPagesController < ApplicationController
-
-  class SQLView
-    attr_accessor :id, :title, :content, :query, :answer
-  end
-
-
   def index
   end
 
@@ -16,6 +9,7 @@ class StaticPagesController < ApplicationController
 
     @title = lesson[:title]
     @sections = lesson[:sections]
+    @next_lesson = lesson[:next_lesson]
 
     render :lesson_view
     end

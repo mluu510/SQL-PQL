@@ -1,10 +1,18 @@
 <div class="container">
+
 <div class="row">
 	<h1 class="page-header"><%= @title %></h1>
 </div>
 
 
 <% @sections.each do |section| %>
-	<%= render 'tab_view', section: section %>
+	<%= render 'section_view', section: section %>
+<% end %>
+
+<!-- Next lesson button -->
+<% if @next_lesson %>
+	<div class="row text-right">
+		<a class="btn btn-success" href="<%= @next_lesson[:link] %>"><%= @next_lesson[:title] %></a>
+	</div>
 <% end %>
 </div>

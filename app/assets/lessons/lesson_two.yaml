@@ -1,93 +1,44 @@
 ---
-:title: 1. The SELECT command
+:title: 2. Lets SUM, COUNT, MAX and more!
 :next_lesson:
-  :title: 2. Lets SUM, COUNT, MAX and more!
-  :link: 2
+  :title: 3. Whatever...
+  :link: 3
 :sections:
 - - :id: ex1
     :title: Example 1
-    :content: To display just the country name and population, replace the * with <span class="label label-success">name, population</span>
-    :query: ! 'SELECT
+    :content: Lets use a new SQL command called SUM. SUM will add up all the value of a particular column. This query sums up the total population of the world!
+    :query: ! "SELECT\nSUM(population)\nFROM\nworld\n"
 
-      name, population
+  - :id: q1a
+    :title: Question 1A
+    :content: Find out the total GDP of the world. This is how much product value is produced per year around the world.
+    :answer: ! "SELECT\nSUM(gdp)\nFROM\nworld"
 
-      FROM
-
-      world'
-
-  - :id: q1
-    :title: Question 1
-    :content: Display the name and area from table "world."
-    :answer: ! 'SELECT
-
-      name, area
-
-      FROM
-
-      world'
+  - :id: q1b
+    :title: Question 1B
+    :content: Display the total land mass (area) of the 'Asia-Pacific' region.
+    :answer: ! "SELECT\nSUM(area)\nFROM\nworld\nWHERE\nregion = 'Asia-Pacific'"
 
 - - :id: ex2
     :title: Example 2
-    :content: The query shows the population density (population/area) for each country
-      where the area is over 5,000,000 km2.
-    :answer: 
-    :query: ! 'SELECT
+    :content: We can use COUNT to count the number of countries in the 'Asia-Pacific' region
+    :query: ! "SELECT\nCOUNT(name)\nFROM\nworld\nWHERE\nregion = 'Asia-Pacific'"
 
-      name, population/area
-
-      FROM
-
-      world
-
-      WHERE
-
-      area > 5000000'
   - :id: q2
     :title: Question 2
-    :content: Calculate the "per capita gdp" (gdp/population) for each country where the
-      area is over 5,000,000 km2
-    :answer: ! 'SELECT
+    :content: Find the total number of countries in 'North America' and 'South America'
+    :answer: ! ''
 
-      name, gdp/population
-
-      FROM
-
-      world
-
-      WHERE
-
-      area > 5000000'
-    :query: 
 - - :id: ex3
     :title: Example 3
-    :content: We use AND to ensure that two or more conditions hold true. The example
-      shows the countries where the population is small and the gdp is high.
-    :answer: 
-    :query: ! 'SELECT
+    :content: 
+    :query: ! ''
 
-      name , region
-
-      FROM world
-
-      WHERE
-
-      population < 2000000 AND gdp > 5000000000'
   - :id: q3
     :title: Question 3
-    :content: Lets find the richest small countries. Show the name and region where
-      the area is less then 2,000 km2 and the gdp is more than $5,000,000,000
-    :answer: ! 'SELECT
+    :content: 
+    :answer: ! ''
 
-      name, region
-
-      FROM
-
-      world
-
-      WHERE
-
-      area < 2000 AND gdp > 5000000000'
-    :query: 
 - - :id: ex4
     :title: Example 4
     :content: The keyword IN allows us to check if an item is in a list. The example
