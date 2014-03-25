@@ -35,22 +35,27 @@
 				</ul>
 			</div>
 		</div>
+	</div>
+
+	<div class="row">
+		<div class="panel panel-default col col-md-8 col-md-offset-2">
+			<div class="panel-body">
+				The table you'll be working with is called <span class="badge">world</span>. Here is a <strong>compressed sample</strong> of the table. You can also get a preview the table anywhere by pressing <span class="label label-default"><span class="glyphicon glyphicon-list"></span> Show Table <b class="caret"></b></span> in the navigation bar above. Give it a try now! <small><i>(Note: "show table" isn't available on small screens.)</i></small>
+			</div>
 		</div>
+	</div>
 
-			<div class="row">
-				<div class="panel panel-default col col-md-8 col-md-offset-2">
-					<div class="panel-body">
-						The table you'll be working with is called <span class="badge">world</span>. Here is a <strong>compress sample</strong> of the table. You can also get a preview of the table by pressing <span class="label label-default"><span class="glyphicon glyphicon-list"></span> Show Table <b class="caret"></b></span> in the navigation bar above. Give it a try now!
-					</div>
-				</div>
-			</div>
+	<div class="row">
+		<div class="well col col-md-8 col-md-offset-2">
+			<%= render 'world_table' %>
+		</div>
+	</div>
 
-			<div class="row">
-				<div class="well col col-md-8 col-md-offset-2">
-					<%= render 'world_table' %>
-				</div>
-			</div>
+	<% @sections.each do |section| %>
+	<%= render 'section_view', section: section %>
+	<% end %>
 
-			<% @sections.each do |section| %>
-			<%= render 'section_view', section: section %>
-			<% end %>
+	<div class="row text-right">
+		<a class="btn btn-success" href="1">1. The SELECT command</a>
+	</div>
+</div>
