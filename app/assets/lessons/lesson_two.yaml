@@ -6,133 +6,69 @@
 :sections:
 - - :id: ex1
     :title: Example 1
-    :content: Lets use a new SQL command called SUM. SUM will add up all the value of a particular column. This query sums up the total population of the world!
-    :query: ! "SELECT\nSUM(population)\nFROM\nworld\n"
+    :content: Lets use a new SQL command called <span class="badge">SUM</span>. <span class="badge">SUM</span> will add up all the values of a particular column. This query sums up the total <span class="badge">population</span> of the <span class="badge">world</span>!
+    :query: ! "SELECT\nSUM(population)\nFROM\nworld"
 
   - :id: q1a
     :title: Question 1A
-    :content: Find out the total GDP of the world. This is how much product value is produced per year around the world.
+    :content: Find out the total <span class="badge">gdp</span> of the <span class="badge">world</span>. This is how much product value is produced per year around the world!
     :answer: ! "SELECT\nSUM(gdp)\nFROM\nworld"
 
   - :id: q1b
     :title: Question 1B
-    :content: Display the total land mass (area) of the 'Asia-Pacific' region.
+    :content: Display the total land mass; <span class="badge">area</span>, of the <span class="badge">region</span> <span class="badge">'Asia-Pacific'</span>.
     :answer: ! "SELECT\nSUM(area)\nFROM\nworld\nWHERE\nregion = 'Asia-Pacific'"
 
 - - :id: ex2
     :title: Example 2
-    :content: We can use COUNT to count the number of countries in the 'Asia-Pacific' region
+    :content: We can use <span class="badge">COUNT</span> to count the number of countries in the <span class="badge">region</span> <span class="badge">'Asia-Pacific'</span>.
     :query: ! "SELECT\nCOUNT(name)\nFROM\nworld\nWHERE\nregion = 'Asia-Pacific'"
 
   - :id: q2
     :title: Question 2
-    :content: Find the total number of countries in 'North America' and 'South America'
-    :answer: ! ''
+    :content: Find the total number of countries in the <span class="badge">region</span> <span class="badge">'North America'</span> and '<span class="badge">South America'</span>.
+    :answer: ! "SELECT\nCOUNT(name)\nFROM\nworld\nWHERE\nregion IN ('North America', 'South America')"
 
 - - :id: ex3
     :title: Example 3
-    :content: 
+    :content:
     :query: ! ''
 
   - :id: q3
     :title: Question 3
-    :content: 
+    :content:
     :answer: ! ''
 
 - - :id: ex4
     :title: Example 4
-    :content: The keyword IN allows us to check if an item is in a list. The example
-      shows the name and population for the countries 'Ireland', 'Iceland' and 'Denmark'
-    :answer: 
-    :query: ! 'SELECT
+    :content:
+    :query: ! ''
 
-      name, population
-
-      FROM
-
-      world
-
-      WHERE
-
-      name IN (''Ireland'', ''Iceland'', ''Denmark'')'
   - :id: q4
     :title: Question 4
-    :content: Show the name and population for 'China', 'Vietnam', 'Japan'
-    :answer: ! 'SELECT
+    :content:
+    :answer: ! ''
 
-      name, population
-
-      FROM
-
-      world
-
-      WHERE
-
-      name IN (''China'', ''Vietnam'', ''Japan'')'
-    :query: 
 - - :id: ex5
     :title: Example 5
-    :content: What are the countries beginning with 'D'? The word LIKE permits pattern
-      matching. % is the wildcard. The examples shows countries beginning with 'D'.
-    :answer: 
-    :query: ! 'SELECT
+    :content:
+    :query: ! ''
 
-      name
-
-      FROM
-
-      world
-
-      WHERE
-
-      name LIKE ''D%'''
   - :id: q5a
     :title: Question 5A
-    :content: Show only the name of each country that begins with 'S'.
-    :answer: ! 'SELECT
+    :content:
+    :answer: ! ''
 
-      name
-
-      FROM
-
-      world
-
-      WHERE
-
-      name LIKE ''S%'''
-    :query: 
   - :id: q5b
     :title: Question 5B
-    :content: Show the name and region of each country that begins with 'T' and ends
-      with a 'n'.
-    :answer: ! 'SELECT
+    :content:
+    :answer: ! ''
 
-      name, region
-
-      FROM
-
-      world
-
-      WHERE
-
-      name LIKE ''T%n'''
-    :query: 
 - - :id: ex6
     :title: Example 6
-    :content: Which countries are not too small and not too big? BETWEEN allows range
-      checking - note that it is inclusive.
-    :answer: 
-    :query: ! 'SELECT
+    :content:
+    :query: ! ''
 
-      name, area
-
-      FROM
-
-      world
-
-      WHERE
-
-      area BETWEEN 207600 AND 244820'
   - :id: q6a
     :title: Question 6A
     :content: Lets find all the small countries where the area is between 10,000 km2
@@ -148,7 +84,7 @@
       WHERE
 
       area BETWEEN 10000 AND 50000'
-    :query: 
+    :query:
   - :id: q6b
     :title: Question 6B
     :content: List the country names and population where the population is between
@@ -164,4 +100,4 @@
       WHERE
 
       population BETWEEN 35000000 AND 75000000'
-    :query: 
+    :query:
