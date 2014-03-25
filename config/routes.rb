@@ -1,4 +1,5 @@
 SqlPql::Application.routes.draw do
+  use_doorkeeper
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,6 +56,8 @@ SqlPql::Application.routes.draw do
   #   end
   root :to => 'static_pages#index'
   get 'lesson/:id' => 'static_pages#lesson'
+  get 'auth/:provider/callback' => 'sessions#create'
+  delete 'logout' => 'session#destroy'
 
   get 'run' => 'sql#run'
 end

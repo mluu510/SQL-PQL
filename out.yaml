@@ -1,0 +1,214 @@
+---
+:title: 1. The SELECT command
+:sections:
+- - :id: ex1
+    :title: Example 1
+    :content: To display just the country name and population, replace the * with
+      "name, population"
+    :answer: 
+    :query: ! 'SELECT
+
+      name, population
+
+      FROM
+
+      world'
+  - :id: q1
+    :title: Question 1
+    :content: Display the name and area from table "world."
+    :answer: ! 'SELECT
+
+      name, area
+
+      FROM
+
+      world'
+    :query: 
+- - :id: ex2
+    :title: Example 2
+    :content: The query shows the population density (population/area) for each country
+      where the area is over 5,000,000 km2.
+    :answer: 
+    :query: ! 'SELECT
+
+      name, population/area
+
+      FROM
+
+      world
+
+      WHERE
+
+      area > 5000000'
+  - :id: q2
+    :title: Question 2
+    :content: Show the per capita gdp (gdp/population) for each country where the
+      area is over 5,000,000 km2
+    :answer: ! 'SELECT
+
+      name, gdp/population
+
+      FROM
+
+      world
+
+      WHERE
+
+      area > 5000000'
+    :query: 
+- - :id: ex3
+    :title: Example 3
+    :content: We use AND to ensure that two or more conditions hold true. The example
+      shows the countries where the population is small and the gdp is high.
+    :answer: 
+    :query: ! 'SELECT
+
+      name , region
+
+      FROM world
+
+      WHERE
+
+      population < 2000000 AND gdp > 5000000000'
+  - :id: q3
+    :title: Question 3
+    :content: Lets find the richest small countries. Show the name and region where
+      the area is less then 2,000 km2 and the gdp is more than $5,000,000,000
+    :answer: ! 'SELECT
+
+      name, region
+
+      FROM
+
+      world
+
+      WHERE
+
+      area < 2000 AND gdp > 5000000000'
+    :query: 
+- - :id: ex4
+    :title: Example 4
+    :content: The keyword IN allows us to check if an item is in a list. The example
+      shows the name and population for the countries 'Ireland', 'Iceland' and 'Denmark'
+    :answer: 
+    :query: ! 'SELECT
+
+      name, population
+
+      FROM
+
+      world
+
+      WHERE
+
+      name IN (''Ireland'', ''Iceland'', ''Denmark'')'
+  - :id: q4
+    :title: Question 4
+    :content: Show the name and population for 'China', 'Vietnam', 'Japan'
+    :answer: ! 'SELECT
+
+      name, population
+
+      FROM
+
+      world
+
+      WHERE
+
+      name IN (''China'', ''Vietnam'', ''Japan'')'
+    :query: 
+- - :id: ex5
+    :title: Example 5
+    :content: What are the countries beginning with 'D'? The word LIKE permits pattern
+      matching. % is the wildcard. The examples shows countries beginning with 'D'.
+    :answer: 
+    :query: ! 'SELECT
+
+      name
+
+      FROM
+
+      world
+
+      WHERE
+
+      name LIKE ''D%'''
+  - :id: q5a
+    :title: Question 5A
+    :content: Show only the name of each country that begins with 'S'.
+    :answer: ! 'SELECT
+
+      name
+
+      FROM
+
+      world
+
+      WHERE
+
+      name LIKE ''S%'''
+    :query: 
+  - :id: q5b
+    :title: Question 5B
+    :content: Show the name and region of each country that begins with 'T' and ends
+      with a 'n'.
+    :answer: ! 'SELECT
+
+      name, region
+
+      FROM
+
+      world
+
+      WHERE
+
+      name LIKE ''T%n'''
+    :query: 
+- - :id: ex6
+    :title: Example 6
+    :content: Which countries are not too small and not too big? BETWEEN allows range
+      checking - note that it is inclusive.
+    :answer: 
+    :query: ! 'SELECT
+
+      name, area
+
+      FROM
+
+      world
+
+      WHERE
+
+      area BETWEEN 207600 AND 244820'
+  - :id: q6a
+    :title: Question 6A
+    :content: Lets find all the small countries where the area is between 10,000 km2
+      and 50,000 km2. List the name and area.
+    :answer: ! 'SELECT
+
+      name, population
+
+      FROM
+
+      world
+
+      WHERE
+
+      area BETWEEN 10000 AND 50000'
+    :query: 
+  - :id: q6b
+    :title: Question 6B
+    :content: List the country names and population where the population is between
+      35 million and 75 million. Display the population in millions please.
+    :answer: ! 'SELECT
+
+      name, population/1000000
+
+      FROM
+
+      world
+
+      WHERE
+
+      population BETWEEN 35000000 AND 75000000'
+    :query: 

@@ -22,12 +22,26 @@
 	        <span class="icon-bar"></span>
 	      </button>
 	      <a class="navbar-brand" href="<%= root_url %>">SQL-PQL</a>
+
+
 	    </div>
-
-
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<% if current_user %>
+	      <ul class="nav navbar-nav">
+					<li class="hidden-xs"><img src="<%= current_user.avatar_url + '?d=identicon&s=50' %>"></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							Welcome, <%= current_user.nickname %> <b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li><% link_to 'Log out' %></li>
+						</ul>
+
+					</li>
+				</ul>
+				<% end %>
 
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="<%= root_url %>">Home</a></li>
