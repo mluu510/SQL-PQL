@@ -13,6 +13,8 @@
   <h1>Hello there!</h1>
   <p>Welcome to SQL-PQL ("sequel prequel") an interactive SQL learning guide.</p>
   <p><a class="btn btn-lg btn-success" href="lesson/0">Start Learning</a></p>
-	<p><a class="btn btn-lg btn-primary" href="auth/github">Login with GitHub</a></p>
+	<% if current_user.nil? %>
+		<p><a class="btn btn-lg btn-primary" href="auth/github">Login with GitHub</a></p>
+	<% end %>
 
 </div>

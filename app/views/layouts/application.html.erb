@@ -36,7 +36,7 @@
 							Welcome, <%= current_user.nickname %> <b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu">
-							<li><% link_to 'Log out' %></li>
+							<li><%= link_to 'Log out', logout_url, method: 'delete' %></li>
 						</ul>
 
 					</li>

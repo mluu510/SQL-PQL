@@ -57,7 +57,7 @@ SqlPql::Application.routes.draw do
   root :to => 'static_pages#index'
   get 'lesson/:id' => 'static_pages#lesson'
   get 'auth/:provider/callback' => 'sessions#create'
-  delete 'logout' => 'session#destroy'
+  delete 'logout' => 'sessions#destroy'
 
   get 'run' => 'sql#run'
 end
