@@ -1,48 +1,53 @@
 ---
 :title: 2. Lets SUM, COUNT, MAX and more!
 :next_lesson:
-  :title: 3. Whatever...
+  :title: 3. Subqueries, SELECT inception!
   :link: 3
 :sections:
 - - :id: ex1
     :title: Example 1
     :content: Lets use a new SQL command called <span class="badge">SUM</span>. <span class="badge">SUM</span> will add up all the values of a particular column. This query sums up the total <span class="badge">population</span> of the <span class="badge">world</span>!
-    :query: ! "SELECT\nSUM(population)\nFROM\nworld"
+    :query: ! "SELECT\n  SUM(population)\nFROM\n  world"
 
   - :id: q1a
     :title: Question 1A
     :content: Find out the total <span class="badge">gdp</span> of the <span class="badge">world</span>. This is how much product value is produced per year around the world!
-    :answer: ! "SELECT\nSUM(gdp)\nFROM\nworld"
+    :answer: ! "SELECT\n  SUM(gdp)\nFROM\n  world"
 
   - :id: q1b
     :title: Question 1B
     :content: Display the total land mass; <span class="badge">area</span>, of the <span class="badge">region</span> <span class="badge">'Asia-Pacific'</span>.
-    :answer: ! "SELECT\nSUM(area)\nFROM\nworld\nWHERE\nregion = 'Asia-Pacific'"
+    :answer: ! "SELECT\n  SUM(area)\nFROM\n  world\nWHERE\n  region = 'Asia-Pacific'"
 
 - - :id: ex2
     :title: Example 2
     :content: We can use <span class="badge">COUNT</span> to count the number of countries in the <span class="badge">region</span> <span class="badge">'Asia-Pacific'</span>.
-    :query: ! "SELECT\nCOUNT(name)\nFROM\nworld\nWHERE\nregion = 'Asia-Pacific'"
+    :query: ! "SELECT\n  COUNT(name)\nFROM\n  world\nWHERE\n  region = 'Asia-Pacific'"
 
-  - :id: q2
-    :title: Question 2
+  - :id: q2a
+    :title: Question 2A
     :content: Find the total number of countries in the <span class="badge">region</span> <span class="badge">'North America'</span> and '<span class="badge">South America'</span>.
-    :answer: ! "SELECT\nCOUNT(name)\nFROM\nworld\nWHERE\nregion IN ('North America', 'South America')"
+    :answer: ! "SELECT\n  COUNT(name)\nFROM\n  world\nWHERE\n  region IN ('North America', 'South America')"
+
+  - :id: q2b
+    :title: Question 2B
+    :content: Count the number of countries that have an <span class="badge">area</span> of at least 1,000,000 km<sup>2</sup>.
+    :answer: ! "SELECT\n  COUNT(name)\nFROM\n  world\nWHERE\n  area > 1000000"
 
 - - :id: ex3
     :title: Example 3
     :content: The <span class="badge">MAX</span> command does what you would expect, it's returns the maxmium value of the column. This example shows the <span class="badge">population</span> most poulated country in <span class="badge">'South America'</span>.
-    :query: ! "SELECT\nMAX(population)\nFROM\nworld\nWHERE\nregion = 'South America'"
+    :query: ! "SELECT\n  MAX(population)\nFROM\n  world\nWHERE\n  region = 'South America'"
 
   - :id: q3
     :title: Question 3
-    :content:
-    :answer: ! ''
+    :content: Lets find the  largest land mass; <span class="badge">area</span>, in <span class="badge">'Europe'</span> by using the <span class="badge">Max</span> SQL command.
+    :answer: ! "SELECT\n  MAX(area)\nFROM\n  world\nWHERE\n  region = 'Europe'"
 
 - - :id: ex4
     :title: Example 4
-    :content:
-    :query: ! ''
+    :content: If we wanted to find all the regions in the <span class="badge">world</span>, we can use the <span class="badge">DISTINCT</span> SQL command.
+    :query: ! "SELECT\n  DISTINCT(region)\nFROM\n  world"
 
   - :id: q4
     :title: Question 4
@@ -51,53 +56,30 @@
 
 - - :id: ex5
     :title: Example 5
-    :content:
-    :query: ! ''
+    :content: This query uses <span class="badge">GROUP BY</span> to find the number of countries per <span class="badge">region</span>. Take a close look at the syntax, this one is a bit tricky.
+    :query: ! "SELECT\n  region, COUNT(name)\nFROM\n  world\nGROUP BY\n  region"
 
   - :id: q5a
     :title: Question 5A
-    :content:
-    :answer: ! ''
+    :content: Lets find the total <span class="badge">population</span> of each region! Use the <span class="badge">SUM</span> function to add up each country's <span class="badge">population</span> and remember to <span class="badge">GROUP BY</span> region.
+    :answer: ! "SELECT\n  region, SUM(population)\nFROM\n  world\nGROUP BY\n  region"
 
   - :id: q5b
     :title: Question 5B
-    :content:
-    :answer: ! ''
+    :content: For each <span class="badge">region</span>, <span class="badge">COUNT</span> the number of countries that have a <span class="badge">population</span> greater than 100 million.
+    :answer: ! "SELECT\n  region, COUNT(name)\nFROM\n  world\nWHERE\n  population > 100000000\nGROUP BY\n  region"
 
 - - :id: ex6
     :title: Example 6
-    :content:
-    :query: ! ''
+    :content: The SQL command <span class="badge">HAVING</span> allows you to filter out <span class="badge">GROUP BY</span> even furthur. This query shows the <span class="badge">regions</span> with a total <span class="badge">population</span> of least half a billion people.
+    :query: ! "SELECT\n  region, SUM(population)\nFROM\n  world\nGROUP BY\n  region\nHAVING\n  SUM(population) > 500000000"
 
   - :id: q6a
     :title: Question 6A
-    :content: Lets find all the small countries where the area is between 10,000 km2
-      and 50,000 km2. List the name and population.
-    :answer: ! 'SELECT
+    :content: 'Write a query that will show all the <span class="badge">regions</span> with at least 30 countries. <strong>Hint:</strong> use <span class="badge">HAVING</span> and <span class="badge">COUNT</span> to filter in <span class="badge">regions</span> that have greater than or equal to 30 names.'
+    :answer: ! "SELECT\n  region, COUNT(name)\nFROM\n  world\nGROUP BY\n  region\nHAVING\n  COUNT(name) >= 30"
 
-      name, population
-
-      FROM
-
-      world
-
-      WHERE
-
-      area BETWEEN 10000 AND 50000'
-    :query:
   - :id: q6b
     :title: Question 6B
-    :content: List the country names and population where the population is between
-      35 million and 75 million. Display the population in millions please.
-    :answer: ! 'SELECT
-
-      name, population/1000000
-
-      FROM
-
-      world
-
-      WHERE
-
-      population BETWEEN 35000000 AND 75000000'
-    :query:
+    :content:
+    :answer: ! ""

@@ -6,211 +6,90 @@
 :sections:
 - - :id: ex1
     :title: Example 1
-    :content: To display just the country name and population, replace the * with <span class="badge">name, population</span>
-    :query: ! 'SELECT
-
-      name, population
-
-      FROM
-
-      world'
+    :content: To display just the country name and population, replace the * with <span class="badge">name, population</span>.
+    :query: ! "SELECT\n  name, population\nFROM\n  world"
 
   - :id: q1
     :title: Question 1
-    :content: Display the <span class="badge">name</span> and <span class="badge">area</span> from table <span class="badge">world</span>
-    :answer: ! 'SELECT
-
-      name, area
-
-      FROM
-
-      world'
+    :content: Display the <span class="badge">name</span> and <span class="badge">area</span> from table <span class="badge">world</span>.
+    :answer: ! "SELECT\n  name, area\nFROM\n  world"
 
 - - :id: ex2
     :title: Example 2
     :content: The query shows the population density; <span class="badge">population/area</span>, for each country
       where the <span class="badge">area</span> is over 5,000,000 km<sup>2</sup>.
-    :answer:
-    :query: ! 'SELECT
+    :query: ! "SELECT\n  name, population/area\nFROM\n  world\nWHERE\n  area > 5000000"
 
-      name, population/area
-
-      FROM
-
-      world
-
-      WHERE
-
-      area > 5000000'
   - :id: q2
     :title: Question 2
     :content: Calculate the "per capita gdp"; <span class="badge">gdp/population</span>, for each country where the
-      <span class="badge">area</span> is over 5,000,000 km<sup>2</sup>
-    :answer: ! 'SELECT
+      <span class="badge">area</span> is over 5,000,000 km<sup>2</sup>.
+    :answer: ! "SELECT\n  name, gdp/population\nFROM\n  world\nWHERE\n  area > 5000000"
 
-      name, gdp/population
-
-      FROM
-
-      world
-
-      WHERE
-
-      area > 5000000'
-    :query:
 - - :id: ex3
     :title: Example 3
     :content: We use <span class="badge">AND</span> to ensure that two or more conditions hold true. The example
       shows the countries where the <span class="badge">population</span> is small and the <span class="badge">gdp</span> is high.
-    :answer:
-    :query: ! 'SELECT
+    :query: ! "SELECT\n  name , region\nFROM\n  world\nWHERE\n  population < 2000000 AND gdp > 5000000000"
 
-      name , region
-
-      FROM world
-
-      WHERE
-
-      population < 2000000 AND gdp > 5000000000'
   - :id: q3
     :title: Question 3
     :content: Lets find the richest small countries. Show the <span class="badge">name</span> and <span class="badge">region</span> where
-      the <span class="badge">area</span> is less then 2,000 km<sup>2</sup> and the <span class="badge">gdp</span> is more than $5,000,000,000
-    :answer: ! 'SELECT
+      the <span class="badge">area</span> is less then 2,000 km<sup>2</sup> and the <span class="badge">gdp</span> is more than $5,000,000,000.
+    :answer: ! "SELECT\n  name, region\nFROM\n  world\nWHERE\n  area < 2000 AND gdp > 5000000000"
 
-      name, region
-
-      FROM
-
-      world
-
-      WHERE
-
-      area < 2000 AND gdp > 5000000000'
-    :query:
 - - :id: ex4
     :title: Example 4
     :content: The keyword <span class="badge">IN</span> allows us to check if an item is in a list. The example
-      shows the <span class="badge">name</span> and <span class="badge">population</span> for the countries <span class="badge">'Ireland', 'Iceland', 'Denmark'</span>
-    :answer:
-    :query: ! 'SELECT
+      shows the <span class="badge">name</span> and <span class="badge">population</span> for the countries <span class="badge">'Ireland', 'Iceland', 'Denmark'</span>.
+    :query: ! "SELECT\n  name, population\nFROM\n  world\nWHERE\n  name IN ('Ireland', 'Iceland', 'Denmark')"
 
-      name, population
-
-      FROM
-
-      world
-
-      WHERE
-
-      name IN (''Ireland'', ''Iceland'', ''Denmark'')'
   - :id: q4
     :title: Question 4
-    :content: Show the <span class="badge">name</span> and <span class="badge">population</span> for <span class="badge">'China', 'Vietnam', 'Japan'</span>
-    :answer: ! 'SELECT
+    :content: Show the <span class="badge">name</span> and <span class="badge">population</span> for <span class="badge">'China', 'Vietnam', 'Japan'</span>.
+    :answer: ! "SELECT\n  name, population\nFROM\n  world\nWHERE\n  name IN ('China', 'Vietnam', 'Japan')"
 
-      name, population
-
-      FROM
-
-      world
-
-      WHERE
-
-      name IN (''China'', ''Vietnam'', ''Japan'')'
-    :query:
 - - :id: ex5
     :title: Example 5
     :content: What are the countries beginning with 'D'? The word <span class="badge">LIKE</span> permits pattern
       matching. <span class="badge">%</span> is the wildcard. The examples shows countries beginning with 'D'.
-    :answer:
-    :query: ! 'SELECT
+    :query: ! "SELECT\n  name\nFROM\n  world\nWHERE\n  name LIKE 'D%'"
 
-      name
-
-      FROM
-
-      world
-
-      WHERE
-
-      name LIKE ''D%'''
   - :id: q5a
     :title: Question 5A
     :content: Show only the <span class="badge">name</span> of the countries that begins with 'S'. Don't forget to get use <span class="badge">%</span> as the wildcard.
-    :answer: ! 'SELECT
+    :answer: ! "SELECT\n  name\nFROM\n  world\nWHERE\n  name LIKE 'S%'"
 
-      name
-
-      FROM
-
-      world
-
-      WHERE
-
-      name LIKE ''S%'''
-    :query:
   - :id: q5b
     :title: Question 5B
     :content: Show the <span class="badge">name</span> and <span class="badge">region</span> of countries that begins with 'T' and ends
       with a 'n'.
-    :answer: ! 'SELECT
+    :answer: ! "SELECT\n  name, region\nFROM\n  world\nWHERE\n  name LIKE 'T%n'"
 
-      name, region
-
-      FROM
-
-      world
-
-      WHERE
-
-      name LIKE ''T%n'''
-    :query:
 - - :id: ex6
     :title: Example 6
     :content: Which countries are not too small and not too big? <span class="badge">BETWEEN</span> allows range
       checking - note that it is inclusive.
-    :answer:
-    :query: ! 'SELECT
+    :query: ! "SELECT\n  name, area\nFROM\n  world\nWHERE\n  area BETWEEN 207600 AND 244820"
 
-      name, area
-
-      FROM
-
-      world
-
-      WHERE
-
-      area BETWEEN 207600 AND 244820'
   - :id: q6a
     :title: Question 6A
     :content: Lets find all the small countries where the <span class="badge">area</span> is between 10,000 km<sup>2</sup>
-      and 50,000 km<sup>2</sup>. List the <span class="badge">name</span> and <span class="badge">population.</span>
-    :answer: ! 'SELECT
+      and 50,000 km<sup>2</sup>. List the <span class="badge">name</span> and <span class="badge">population</span>.
+    :answer: ! "SELECT\n  name, population\nFROM\n  world\nWHERE\n  area BETWEEN 10000 AND 50000"
 
-      name, population
-
-      FROM
-
-      world
-
-      WHERE
-
-      area BETWEEN 10000 AND 50000'
-    :query:
   - :id: q6b
     :title: Question 6B
     :content: List the country's <span class="badge">name</span> and <span class="badge">population</span> where the population is <span class="badge">BETWEEN</span>
       35 million and 75 million. Display the population in millions please.
-    :answer: ! 'SELECT
+    :answer: ! "SELECT\n  name, population/1000000\nFROM\n  world\nWHERE\n  population BETWEEN 35000000 AND 75000000"
 
-      name, population/1000000
+- - :id: ex7
+    :title: Example 7
+    :content: We can use <span class="badge">AS</span> SQL command to rename our column for legitbility purposes. Here, I renamed the column <span class="badge">name</span> to <span class="badge">country</span> and the <span class="badge">gdp/population</span> to <span class="badge">per capita GDP</span>.
+    :query: "SELECT\n  name AS country, gdp/population AS \"per capita GDP\"\nFROM\n  world"
 
-      FROM
-
-      world
-
-      WHERE
-
-      population BETWEEN 35000000 AND 75000000'
-    :query:
+  - :id: q7
+    :title: Question 7
+    :content: Create a query where the <span class="badge">name</span> column is renamed as <span class="badge">country</span> and the <span class="badge">population</span> is called <span class="badge">"Number of people"</span>.
+    :answer: ! "SELECT\n  name AS country, population AS \"Number of people\"\nFROM\n  world"

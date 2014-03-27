@@ -1,0 +1,85 @@
+---
+:title: 3. Subqueries, SELECT inception!
+:next_lesson:
+  :title: 4. JOIN, JOIN, JOIN!
+  :link: 4
+:sections:
+- - :id: ex1
+    :title: Example 1
+    :content:
+    :query: ! ""
+
+  - :id: q1a
+    :title: Question 1A
+    :content:
+    :answer: ! ""
+
+  - :id: q1b
+    :title: Question 1B
+    :content:
+    :answer: ! ""
+
+- - :id: ex2
+    :title: Example 2
+    :content:
+    :query: ! ""
+
+  - :id: q2a
+    :title: Question 2A
+    :content:
+    :answer: ! ""
+
+  - :id: q2b
+    :title: Question 2B
+    :content:
+    :answer: ! ""
+
+- - :id: ex3
+    :title: Example 3
+    :content:
+    :query: ! ""
+
+  - :id: q3
+    :title: Question 3
+    :content:
+    :answer: ! ""
+
+- - :id: ex4
+    :title: Example 4
+    :content:
+    :query: ! ""
+
+  - :id: q4
+    :title: Question 4
+    :content:
+    :answer: ! ''
+
+- - :id: ex5
+    :title: Example 5
+    :content:
+    :query: ! ""
+
+  - :id: q5a
+    :title: Question 5A
+    :content:
+    :answer: ! ""
+
+  - :id: q5b
+    :title: Question 5B
+    :content:
+    :answer: ! ""
+
+- - :id: ex6
+    :title: Example 6
+    :content:
+    :query: ! ""
+
+  - :id: q6a
+    :title: Question 6A
+    :content:
+    :answer: ! ""
+
+  - :id: q6b
+    :title: Question 6B
+    :content:
+    :answer: ! ""

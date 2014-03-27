@@ -1,0 +1,85 @@
+---
+:title: 3. Subqueries, SELECT inception
+:next_lesson:
+  :title: 4. JOIN, JOIN, JOIN!
+  :link: 4
+:sections:
+- - :id: ex1
+    :title: Example 1
+    :content: This query contains a subquery that finds the population of 'Canada' then list all the crounties that have a larger population.
+    :query: ! "SELECT region, name, population\nFROM world\nWHERE population > (\n  SELECT population\n  FROM world\n  WHERE name = 'Canada'\n  )"
+
+  - :id: q1a
+    :title: Question 1A
+    :content: "Lets find all the contries that have a land mass; area, larger than 'Brazil'. <strong>Hint:</strong> Use a subquery to find the area of 'Brazil' first. Display the region, name, area.</strong>"
+    :answer: ! "SELECT region, name, area\nFROM world\nWHERE area > (\n  SELECT area\n  FROM world\n  WHERE name = 'Brazil'\n  )"
+
+  - :id: q1b
+    :title: Question 1B
+    :content: Find the gdp of countries that have a population smaller than Samoa. List the name and gdp, please.
+    :answer: ! "SELECT name, gdp\nFROM world\nWHERE population < (\n  SELECT population\n  FROM world\n  WHERE name = 'Samoa'\n  )"
+
+- - :id: q2
+    :title: Question 2
+    :content: List the all countries in the same region as 'Taiwan' and 'Egypt'. <strong>Hint:</strong> use the IN SQL command to help you solve this. Display region and name. You can do it!
+    :answer: ! "SELECT region, name\nFROM world\nWHERE region IN (\n  SELECT region\n  FROM world\n  WHERE name IN ('Taiwan', 'Egypt')\n  )"
+
+  - :id: q2a
+    :title: Question 2A
+    :content: Find all the countries in 'North America' that have a per capita GDP greater than 'South Korea'. Just display the name.
+    :answer: ! "SELECT name\nFROM world\nWHERE region = 'North America' AND gdp/population > (\n  SELECT gdp/population\n  FROM world\n  WHERE name = 'South Korea'\n  )"
+
+  - :id: q2b
+    :title: Question 2B
+    :content:
+    :answer: ! ""
+
+- - :id: ex3
+    :title: Example 3
+    :content:
+    :query: ! ""
+
+  - :id: q3
+    :title: Question 3
+    :content:
+    :answer: ! ""
+
+- - :id: ex4
+    :title: Example 4
+    :content:
+    :query: ! ""
+
+  - :id: q4
+    :title: Question 4
+    :content:
+    :answer: ! ''
+
+- - :id: ex5
+    :title: Example 5
+    :content:
+    :query: ! ""
+
+  - :id: q5a
+    :title: Question 5A
+    :content:
+    :answer: ! ""
+
+  - :id: q5b
+    :title: Question 5B
+    :content:
+    :answer: ! ""
+
+- - :id: ex6
+    :title: Example 6
+    :content:
+    :query: ! ""
+
+  - :id: q6a
+    :title: Question 6A
+    :content:
+    :answer: ! ""
+
+  - :id: q6b
+    :title: Question 6B
+    :content:
+    :answer: ! ""
