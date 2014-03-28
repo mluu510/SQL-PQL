@@ -1,4 +1,4 @@
-# SQL-PQL
+# [SQL-PQL](http://sql-pql.com)
 
 ## Info
 SQL-PQL (pronouced "Sequel Prequel") is an interactive SQL learning guide. It is developed using Ruby on Rails, Postgres SQL, Bootstrap, YAML, JQuery, Underscore.string, AJAX, OmniAuth, JST, EJS and hosted on Heroku. Vist the live demo **[HERE](http://sql-pql.com)** and enjoy.
