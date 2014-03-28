@@ -31,4 +31,6 @@ This guide works on any device using a responsive web design pattern provided by
 
 ## Install
 Clone or fork the project with this link:
-'''https://github.com/mluu510/SQL-PQL.git'''
+'''
+https://github.com/mluu510/SQL-PQL.git
+'''
