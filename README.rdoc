@@ -1,28 +1,27 @@
-== README
+SQL-PQL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SQL-PQL (pronouced "Sequel Prequel") is an interfactive SQL learning guide. It is developed using Ruby on Rails and hosted on Heroku. Vist the live demo at http://sql-pql.com and enjoy
 
-Things you may want to cover:
+We teach SQL by showing you sample query on a live table with examples and then quiz you on similar concept on the next tab. We believe the best way to learn SQL is not through reading boring SQL book but to actually create your own query in a safe and fun sandbox enviroment.
 
-* Ruby version
+The first table you'll be working with is called "world". The world table continues basic information about all the countries around the world. It is a column for the country name, the region it is located in, the area in KM2, the population and GDP in USD.
 
-* System dependencies
+This guide will throughly teach you the following SQL commands:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
++ SELECT
++ DISTINCT
++ SUM
++ COUNT
++ MAX
++ AS
++ FROM
++ WHERE
++ AND
++ OR
++ LIKE
++ IN
++ BETWEEN
++ ORDER BY
++ HAVING
++ LIMIT
++ JOIN
