@@ -1,6 +1,6 @@
-SQL-PQL
+# SQL-PQL
 
-SQL-PQL (pronouced "Sequel Prequel") is an interfactive SQL learning guide. It is developed using Ruby on Rails and hosted on Heroku. Vist the live demo at http://sql-pql.com and enjoy
+SQL-PQL (pronouced "Sequel Prequel") is an interfactive SQL learning guide. It is developed using Ruby on Rails and hosted on Heroku. Vist the live demo [here](http://sql-pql.com) and enjoy
 
 We teach SQL by showing you sample query on a live table with examples and then quiz you on similar concept on the next tab. We believe the best way to learn SQL is not through reading boring SQL book but to actually create your own query in a safe and fun sandbox enviroment.
 
@@ -8,20 +8,20 @@ The first table you'll be working with is called "world". The world table contin
 
 This guide will throughly teach you the following SQL commands:
 
-+ SELECT
-+ DISTINCT
-+ SUM
-+ COUNT
-+ MAX
-+ AS
-+ FROM
-+ WHERE
-+ AND
-+ OR
-+ LIKE
-+ IN
-+ BETWEEN
-+ ORDER BY
-+ HAVING
-+ LIMIT
-+ JOIN
+- SELECT
+- DISTINCT
+- SUM
+- COUNT
+- MAX
+- AS
+- FROM
+- WHERE
+- AND
+- OR
+- LIKE
+- IN
+- BETWEEN
+- ORDER BY
+- HAVING
+- LIMIT
+- JOIN
