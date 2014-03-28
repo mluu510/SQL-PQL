@@ -5,7 +5,7 @@ SQL-PQL (pronouced "Sequel Prequel") is an interactive SQL learning guide. It is
 
 We teach SQL by showing you sample query on a live table with examples and then quiz you on similar concept on the next tab. We believe the best way to learn SQL is not through reading boring SQL book but to actually create your own query in a safe and fun sandbox enviroment.
 
-The first table you'll be working with is called "world". The world table continues basic information about all the countries around the world. It is a column for the country name, the region it is located in, the area in KM2, the population and GDP in USD.
+The first table you'll be working with is called "world". The world table continues basic information about all the countries around the world. It is a column for the country name, the region it is located in, the area in KM<sup>2</sup>, the population and GDP in USD.
 
 This guide will throughly teach you the following SQL commands:
 
