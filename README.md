@@ -30,4 +30,5 @@ This guide will throughly teach you the following SQL commands:
 This guide works on any device using a responsive web design pattern provided by Bootstrap. The site uses AJAX for querying the result in the background and JQuery and JST to display the result.
 
 ## Install
-Clone the project.
+Clone or fork the project with this link:
+'''https://github.com/mluu510/SQL-PQL.git'''
