@@ -59,3 +59,5 @@ gem 'doorkeeper'
 gem 'omniauth-github'
 # gem 'omniauth-openid'
 gem 'annotate'
+
+gem 'figaro'
