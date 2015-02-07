@@ -10,7 +10,7 @@ class SqlController < ApplicationController
     blacklist.each do |word|
     	if query.upcase.include?(word) || answer.upcase.include?(word)
         # return render :json => {status: "\"#{word}\" is blacklisted!"}
-        redirect_to 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0CDgQtwIwAQ&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DoHg5SJYRHA0&ei=RNg1U9C6M5TlygHJ6YCQCw&usg=AFQjCNEcy3X8QxEz3ZqmxAznmt4YfNijBQ&sig2=8XcMNbm7EiyUUkpwJDGumQ&bvm=bv.63808443,d.aWc'
+        redirect_to 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0CDgQtwIwAQ&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DoHg5SJYRHA0&ei=RNg1U9C6M5TlygHJ6YCQCw&usg=AFQjCNEcy3X8QxEz3ZqmxAznmt4YfNijBQ&sig2=8XcMNbm7EiyUUkpwJDGumQ&bvm=bv.63808443,d.aWc' and return
     	end
     end
 
