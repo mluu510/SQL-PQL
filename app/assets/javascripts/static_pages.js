@@ -38,8 +38,10 @@ $(document).ready(function() {
 			var parent = $(e.target).parent();
 			var siblingDiv = $(parent).prev();
 			var textarea = $(siblingDiv).find('.sql-input');
-			textarea.val(textarea.data('answer'));
-			var submitButton = $(e.target).siblings
+			var editor = textarea.next()[0].CodeMirror;
+			editor.setValue(textarea.data('answer'));
+			editor.save();
+			var submitButton = $(e.target).siblings;
 		}
 	});
 
