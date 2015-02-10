@@ -17,6 +17,8 @@
 //= require backbone
 //= require sql_pql
 //= require underscore.string.min
+//= require codemirror
+//= require codemirror_sql
 //= require_tree ../templates
 //= require_tree .
 

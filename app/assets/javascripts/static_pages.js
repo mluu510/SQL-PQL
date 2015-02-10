@@ -9,16 +9,26 @@ $(document).ready(function() {
 
 	});
 
-	// HANLDE CTRL + ENTER
-	$('textarea').keydown(function (e) {
-		if ((e.ctrlKey || e.metaKey) && e.keyCode === 13) {
-			e.preventDefault();
-			var inputWindow = $(e.target).parents()[2];
-			var outputWindow = $(inputWindow).next();
-			var textarea = $(e.target);
-			queryDB(outputWindow, textarea);
-		}
-	});
+  // Setup CodeMirror
+  $('.sql-input').each(function() {
+    var editor = CodeMirror.fromTextArea(this, {mode: 'text/x-plsql', indentWithTabs: false});
+    editor.setOption("extraKeys", {
+      Tab: function(cm) {
+        var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+        cm.replaceSelection(spaces);
+      },
+      'Ctrl-Enter': function(cm) {
+        var textarea = $(cm.getTextArea());
+        var inputWindow = textarea.parents()[2];
+        var outputWindow = $(inputWindow).next();
+        cm.save();
+        queryDB(outputWindow, textarea);
+      }
+    });
+    editor.on('blur', function(cm) {
+      cm.save();
+    });
+  });
 
 	// HANDLE SHOW ANSWER
 	$('.show-answer').on('click', function(e) {
@@ -28,8 +38,10 @@ $(document).ready(function() {
 			var parent = $(e.target).parent();
 			var siblingDiv = $(parent).prev();
 			var textarea = $(siblingDiv).find('.sql-input');
-			textarea.val(textarea.data('answer'));
-			var submitButton = $(e.target).siblings
+			var editor = textarea.next()[0].CodeMirror;
+			editor.setValue(textarea.data('answer'));
+			editor.save();
+			var submitButton = $(e.target).siblings;
 		}
 	});
 
